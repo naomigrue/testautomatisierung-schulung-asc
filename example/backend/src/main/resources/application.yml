@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: example-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/example}
+    username: ${SPRING_DATASOURCE_USERNAME:example}
+    password: ${SPRING_DATASOURCE_PASSWORD:example}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.testautomation.example: INFO
