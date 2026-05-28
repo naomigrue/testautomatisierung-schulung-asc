@@ -8,12 +8,14 @@ test('has username input', async ({ page }) => {
 
 test('signup successfully', async ({ page }) => {
   await page.goto('http://localhost:3000/');
+
+  const username = 'testuser'+Date.now();
   
-  await page.getByTestId('username-input').fill('testuser');
+  await page.getByTestId('username-input').fill(username);
   await page.getByTestId('password-input').fill('password123');
   await page.getByText('Sign up').click();
 
-  await expect(page.getByTestId('welcome-message')).toContainText('Welcome, testuser!');
+  await expect(page.getByTestId('welcome-message')).toContainText('Welcome, '+username+'!');
 });
 
 test('signup with invalid username', async ({ page }) => {
