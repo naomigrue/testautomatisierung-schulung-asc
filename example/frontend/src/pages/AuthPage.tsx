@@ -81,7 +81,7 @@ export default function AuthPage() {
             disabled={loading}
             onClick={(e) => onSubmit(e, 'signup')}
           >
-            Sign up
+            Register
           </button>
           <button
             type="button"
