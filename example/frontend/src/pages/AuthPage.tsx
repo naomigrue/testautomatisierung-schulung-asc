@@ -28,7 +28,7 @@ export default function AuthPage() {
       navigate('/welcome')
     } catch (err) {
       if (err instanceof ApiError) {
-        setError(err.message)
+        setError(formatAuthError(err))
       } else {
         setError('Something went wrong. Please try again.')
       }
